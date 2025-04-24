@@ -15,6 +15,12 @@ F2=xy’z+x’y’z+w’xy+wx’y+wxy
 
 Hardware – PCs, Cyclone II , USB flasher
 
+**Software – Quartus prime**
+
+**Theory**
+
+**Logic Diagram**
+
 **Procedure**
 
 1.	Type the program in Quartus software.
@@ -29,60 +35,43 @@ Hardware – PCs, Cyclone II , USB flasher
 
 
 **Program:**
-
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
 ```
-Developed by:Rubasri
-RegisterNumber:24900054
+module experiment2(a, b, c, d, w, x, y, z, f1, f2);
+input a, b, c, d, w, x, y, z;
+output f1, f2;
+wire x1, x2, x3, x4, x5, y1, y2, y3, y4, y5;
+assign x1 = ((~a) & (~b) & (~c) & (~d));
+assign x2 = (a & (~c) & (~d));
+assign x3 = ((~b) & (c) & (~d));
+assign x4 = ((~a) & b & c & d);
+assign x5 = (b & (~c) & d);
+assign f1 = x1 | x2 | x3 | x4 | x5;
+
+
+assign y1 = (x & (~y) & z);
+assign y2 = ((~x) & y & z);
+assign y3 = ((~w) & x & y);
+assign y4 = (w & (~x) & y);
+assign y5 = (w & x & y);
+assign f2 = y1 | y2 | y3 | y4 | y5;
+endmodule
 ```
-```python
-Function 1:
-
-    module funct1(a,b,c,d,f1);
-    input a,b,c,d;
-    output f1;
-    assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
-    endmodule
 
 
-Function 2:
+**RTL realization**
 
-    module funct2(w,x,y,z,f2);
-    input w,x,y,z;
-    output f2;
-    assign f2=((~y & z)|( w & y )|(x & y));
-    endmodule
-```
-**Truth table**
-
-![IMG-20241203-WA0039](https://github.com/user-attachments/assets/3166a064-80c9-47d1-8d23-6c6bbb738dee)
-
-![IMG-20241203-WA0038](https://github.com/user-attachments/assets/c27a3fc0-a51e-4bcd-a7fd-eaf05a3a96c1)
-
-**Output**
-![op functions](https://github.com/user-attachments/assets/3e9d24ab-ac12-48a3-8c2c-5811715dc07d)
-
-![OP fun2](https://github.com/user-attachments/assets/5abf3f3d-c0f6-4aeb-8faa-33b288dd9080)
-
-
+**Output:**
 
 **RTL**
 
-![logic diagram](https://github.com/user-attachments/assets/8104046c-7357-4dee-bc6a-f07cccf165e0)
-![LOGIC DIA FUN2](https://github.com/user-attachments/assets/5e7a3067-dfaa-4dbc-9668-b4dee94c609f)
-
+![Screenshot 2025-04-23 190723](https://github.com/user-attachments/assets/ab0a855f-f6f2-44f9-82f8-6ce605dace71)
 
 **Timing Diagram**
-![op functions](https://github.com/user-attachments/assets/f4a38d31-33f8-4587-a889-1a9f17e40601)
 
-![OP fun2](https://github.com/user-attachments/assets/98f03472-02cf-4f1b-b299-5fb44acaa15a)
 
-**K-map**
+![image](https://github.com/user-attachments/assets/eb11d821-c973-40e6-921f-e5661c40354e)
 
-![IMG-20241203-WA0040](https://github.com/user-attachments/assets/69e0c663-2406-4560-948b-dfd3200b4e01)
-![IMG-20241203-WA0042](https://github.com/user-attachments/assets/73050ec6-3d41-4d9d-91c0-94f56ccd3291)
 
 **Result:**
-
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
 
